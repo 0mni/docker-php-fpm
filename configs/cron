@@ -1,0 +1,1 @@
+*/5 * * * *   www-data cd /var/www/nextcloud.danlee.ca/html && /usr/local/bin/php cron.php
