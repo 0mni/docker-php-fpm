@@ -36,7 +36,8 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libsybdb.so /usr/lib/
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl && \
 	docker-php-ext-install imap iconv
 
-RUN docker-php-ext-install bcmath bz2 calendar ctype curl dba dom enchant2
+# enchant
+RUN docker-php-ext-install bcmath bz2 calendar ctype curl dba dom
 RUN docker-php-ext-install fileinfo exif ftp gettext gmp
 RUN docker-php-ext-install intl json ldap mbstring mysqli
 RUN docker-php-ext-install opcache pcntl pspell
