@@ -14,7 +14,7 @@ RUN apt-get install -y --no-install-recommends \
 	zlib1g-dev libicu-dev g++ \
 	libldap2-dev libbz2-dev \
 	curl libcurl4-openssl-dev \
-	libenchant-dev libgmp-dev firebird-dev libib-util \
+	libenchant-2-dev libgmp-dev firebird-dev libib-util \
 	re2c libpng++-dev \
 	libwebp-dev libjpeg-dev libjpeg62-turbo-dev libpng-dev libxpm-dev libvpx-dev libfreetype6-dev \
 	libmagick++-dev \
