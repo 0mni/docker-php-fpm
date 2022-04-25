@@ -4,6 +4,15 @@ echo "[`date +"%d-%b-%Y %T"`] PHP-FPM Docker container boot"
 
 ### create system user for php pool
 if [ ! "$PHP_USER" == "" ] && [ ! "$PHP_UID" == "" ] && [ ! "$PHP_GID" == "" ] && [ ! "$PHP_HOME" == "" ]; then
+user_exists=$(getent passwd $PHP_USER)
+if [ -z "$user_exists" ]
+then
+echo "user does not exist, continuing"
+else
+echo "user exists, deleting user to recreate"
+userdel -f $PHP_USER
+groupdel -f $PHP_USER
+fi
 	echo "env PHP_USER: creating new system user: ${PHP_USER} ${PHP_UID}:${PHP_GID} ${PHP_HOME}"
 	mkdir -p $PHP_HOME && \
 	groupadd -f $PHP_USER -g $PHP_GID && \
